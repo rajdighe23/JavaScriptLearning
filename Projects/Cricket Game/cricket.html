@@ -10,29 +10,30 @@
     <h1>Bat Ball Stump Game</h1>
     <button
       onclick="
-    let randomNumber=Math.random()*3;
-    let computerChoice;
-    if(randomNumber >0 && randomNumber<=1){
-        computerChoice='Bat';
-    }
-    else if(randomNumber>1 && randomNumber<=2){
-        computerChoice='Ball';
-    }
-    else{
-        computerChoice='Stump';
-    }
+  //     let computerChoice;
+  //     let randomNumber = Math.random() * 3;
+  //     if (randomNumber > 0 && randomNumber <= 1) {
+  //        computerChoice = 'Bat';
+  //     }else if (randomNumber > 1 && randomNumber <= 2) {
+  //        computerChoice = 'Ball';
+  //     }else {
+  //        computerChoice = 'Stump';
+  //     }
 
-    let resultMsg;
-    if(computerChoice === 'Ball'){
-       resultMsg='User Won';
-    }
-    else if(computerChoice==='Bat'){
-      resultMsg=`It's a tie`;
-    }
-    else if(computerChoice === 'Stump'){
-       resultMsg=`Computer has won`;
-    }
-    alert(`You have chosen Bat. Computer choice is ${computerChoice} and ${resultMsg}`)
+      let computerChoice=generateComputerChoice()
+      let resultMsg=getResult('Bat',computerChoice)
+
+      // if(computerChoice === 'Ball'){
+      //   resultMsg='User Won';
+      // }
+      // else if(computerChoice==='Bat'){
+      //   resultMsg=`It's a tie`;
+      // }
+      // else if(computerChoice === 'Stump'){
+      //   resultMsg=`Computer has won`;
+      // }
+      showResult('Bat',computerChoice,resultMsg)
+      // alert(`You have chosen Bat. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
       Bat
@@ -40,26 +41,21 @@
 
     <button
       onclick="
-    randomNumber=Math.random()*3;
-    if(randomNumber >0 && randomNumber<=1){
-        computerChoice='Bat';
-    }
-    else if(randomNumber>1 && randomNumber<=2){
-        computerChoice='Ball';
-    }
-    else{
-        computerChoice='Stump';
-    }
-    if(computerChoice === 'Ball'){
-       resultMsg=`It's a tie`;
-    }
-    else if(computerChoice==='Bat'){
-      resultMsg=`Computer has won`;
-    }
-    else if(computerChoice === 'Stump'){
-       resultMsg=`User Won`;
-    }
-    alert(`You have chosen Ball. Computer choice is ${computerChoice} and ${resultMsg}`)
+       computerChoice=generateComputerChoice()
+       resultMsg=getResult('Ball',computerChoice)
+
+      // if(computerChoice === 'Ball'){
+      //   resultMsg=`It's a tie`;
+      // }
+      // else if(computerChoice==='Bat'){
+      //   resultMsg=`Computer has won`;
+      // }
+      // else if(computerChoice === 'Stump'){
+      //   resultMsg=`User Won`;
+      // }
+        showResult('Ball',computerChoice,resultMsg)
+
+      // alert(`You have chosen Ball. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
       Ball
@@ -67,26 +63,20 @@
 
     <button
       onclick="
-    randomNumber=Math.random()*3;
-    if(randomNumber >0 && randomNumber<=1){
-        computerChoice='Bat';
-    }
-    else if(randomNumber>1 && randomNumber<=2){
-        computerChoice='Ball';
-    }
-    else{
-        computerChoice='Stump';
-    }
-    if(computerChoice === 'Ball'){
-       resultMsg=`Computer has won`;
-    }
-    else if(computerChoice==='Bat'){
-      resultMsg=`User Won`;
-    }
-    else if(computerChoice === 'Stump'){
-       resultMsg=`It's a tie`;
-    }
-    alert(`You have chosen Stump. Computer choice is ${computerChoice} and ${resultMsg}`)
+       computerChoice=generateComputerChoice()
+       resultMsg=getResult('Stump',computerChoice)
+      // if(computerChoice === 'Ball'){
+      //   resultMsg=`Computer has won`;
+      // }
+      // else if(computerChoice==='Bat'){
+      //   resultMsg=`User Won`;
+      // }
+      // else if(computerChoice === 'Stump'){
+      //   resultMsg=`It's a tie`;
+      // }
+      showResult('Stump',computerChoice,resultMsg)
+
+      // alert(`You have chosen Stump. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
       Stump

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const age = 4;
+      const gender = "female"; //male or female
+      let finaleDiscount;
+
+      if (age <= 5) {
+        finaleDiscount = 100;
+      } else if (gender === "female") {
+        finaleDiscount = 50;
+      } else if (age <= 8) {
+        finaleDiscount = 50;
+      } else if (age >= 65) {
+        finaleDiscount = 30;
+      } else {
+        finaleDiscount = 0;
+      }
+
+      console.log(`Your final discount is ${finaleDiscount}`);
+    </script>
+  </body>
+</html>
