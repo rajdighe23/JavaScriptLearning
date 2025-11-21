@@ -1,5 +1,20 @@
 let computerChoice;
 //This will generate random number between 0 to 3
+let scoreStr = localStorage.getItem("score");
+let score;
+resetScore(scoreStr);
+// Create object to store score
+function resetScore(scoreStr) {
+  score = JSON.parse(scoreStr) || {
+    win: 0,
+    lost: 0,
+    tie: 0,
+  };
+  score.displayScore = function () {
+    return `No of matches Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`;
+  };
+}
+
 function generateComputerChoice() {
   let randomNumber = Math.random() * 3;
   if (randomNumber > 0 && randomNumber <= 1) {
@@ -50,6 +65,7 @@ function getResult(userMove, computerMove) {
 
 function showResult(userMove, computerMove, result) {
   // console.log(score);
+  localStorage.setItem("Score", JSON.stringify(score));
   alert(
     `You have chosen ${userMove}. Computer choice is ${computerMove} 
 
@@ -58,13 +74,3 @@ function showResult(userMove, computerMove, result) {
     ${score.displayScore()}`
   );
 }
-
-// Create object to store score
-let score = {
-  win: 0,
-  lost: 0,
-  tie: 0,
-  displayScore: function () {
-    return `No of matches Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`;
-  },
-};
