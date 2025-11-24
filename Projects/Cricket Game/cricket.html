@@ -8,7 +8,9 @@
   </head>
   <body>
     <h1>Bat Ball Stump Game</h1>
+
     <button
+      class="choice-button"
       onclick="
   //     let computerChoice;
   //     let randomNumber = Math.random() * 3;
@@ -36,10 +38,16 @@
       // alert(`You have chosen Bat. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
-      Bat
+      <img
+        src="./images/cricketGameBat.png
+    "
+        alt="Bat Image"
+        class="choice-image"
+      />
     </button>
 
     <button
+      class="choice-button"
       onclick="
        computerChoice=generateComputerChoice()
        resultMsg=getResult('Ball',computerChoice)
@@ -58,10 +66,15 @@
       // alert(`You have chosen Ball. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
-      Ball
+      <img
+        src="./images/cricketGameBall.png"
+        alt="Ball Image"
+        class="choice-image"
+      />
     </button>
 
     <button
+      class="choice-button"
       onclick="
        computerChoice=generateComputerChoice()
        resultMsg=getResult('Stump',computerChoice)
@@ -79,8 +92,17 @@
       // alert(`You have chosen Stump. Computer choice is ${computerChoice} and ${resultMsg}`)
     "
     >
-      Stump
+      <img
+        src="./images/cricketGameStump.png"
+        alt="Stump Image"
+        class="choice-image"
+      />
     </button>
+
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
     <button
       onclick="localStorage.clear()
       resetScore(scoreStr)"

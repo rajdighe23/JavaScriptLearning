@@ -13,6 +13,7 @@ function resetScore(scoreStr) {
   score.displayScore = function () {
     return `No of matches Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`;
   };
+  showResult();
 }
 
 function generateComputerChoice() {
@@ -66,11 +67,18 @@ function getResult(userMove, computerMove) {
 function showResult(userMove, computerMove, result) {
   // console.log(score);
   localStorage.setItem("Score", JSON.stringify(score));
-  alert(
-    `You have chosen ${userMove}. Computer choice is ${computerMove} 
+  document.querySelector("#user-move").innerText =
+    userMove !== undefined ? `You have chosen ${userMove}.` : "";
+  document.querySelector("#computer-move").innerText =
+    computerMove !== undefined ? `Computer choice is ${computerMove}.` : "";
+  document.querySelector("#result").innerText =
+    result !== undefined ? result : "";
+  document.querySelector("#score").innerText = `${score.displayScore()}`;
+  // alert(
+  //   `You have chosen ${userMove}. Computer choice is ${computerMove}
 
-    ${result}
+  //   ${result}
 
-    ${score.displayScore()}`
-  );
+  //   ${score.displayScore()}`
+  // );
 }
